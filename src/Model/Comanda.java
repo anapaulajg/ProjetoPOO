@@ -5,13 +5,13 @@ public class Comanda {
     int quantidade;
 
     public Double calculaPreco() {
-        Double total = Double.valueof(0);
-        for(int i; i<pedidos.length; i++){
-            Pedido um = pedidos[i];
-            total+=um.calculaPreco();
-        }
+        Double total = Double.valueOf(0);
+        //for(int i; i<pedidos; i++){
+            //Pedido um = pedidos[i];
+            //total+=um.calculaPreco();
+        //}
         return total;
     }
 
-    Comanda
+
 }

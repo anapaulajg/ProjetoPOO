@@ -1,19 +1,35 @@
 package br.ufrn.tads.poo;
-import Classe.Circulo;
-import Classe.Retangulo;
+
+import Conta.ContaBancaria;
+import Conta.IConta;
 
 public class Main {
     public static void main(String[] args) {
-        Retangulo r = new Retangulo(2,4);
-        System.out.println("Area de r:" + r.calculaArea());
 
-        r = new Retangulo(3,4);
+        IConta conta1 = new ContaBancaria();
+        IConta conta2 = new ContaBancaria();
 
-        System.out.println("Area de r: "+ r.calculaArea());
-        System.out.println("Area de r: "+r.calculaArea());
+        conta1.deposito(200.0);
+        conta2.deposito(100.0);
 
-        Integer a = null;
-        Integer b = 3;
+        conta1.transferencia(conta2, 150.0);
+        System.out.println(conta1.saldo()); // deve ser 50
+        System.out.println(conta2.saldo()); // deve ser 250
+
+        conta1.transferencia(conta2, 150.0); // essa operação não é possível
+        System.out.println(conta1.saldo()); // deve permanecer 50
+
+        conta2.transferencia(conta1, 100.0);
+        System.out.println(conta1.saldo()); // deve ser 150
+        System.out.println(conta2.saldo()); // deve ser 150
+
+        conta2.transferencia(conta1, -100.0);
+        System.out.println(conta1.saldo()); // deve ser 150
+        System.out.println(conta2.saldo()); // deve ser 150
+
+        conta1.saque(50.0);
+        System.out.println(conta1.saldo()); // deve ser 100
+
 
     }
 }

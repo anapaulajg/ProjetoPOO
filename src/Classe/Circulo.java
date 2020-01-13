@@ -14,6 +14,7 @@ public class Circulo {
         return 2*PI*raio;
     }
     public boolean ehMaior(final Circulo c){
-        final int numero
+        final int numero;
+        return true;
     }
 }

@@ -12,7 +12,6 @@ public class  ContaBancaria implements IConta {
     @Override
     public void transferencia(IConta destino, Double valor) {
     if (this.saldo>=valor && valor > 0){
-        this.saldo = this.saldo - valor;
         this.saque(valor);
         destino.deposito(valor);
 
@@ -21,19 +20,17 @@ public class  ContaBancaria implements IConta {
 
     @Override
     public void saque(Double valor) {
-        if (this.saldo>=valor){
+        if (this.saldo >= valor) {
             this.saldo -= valor;
         }
-
     }
-
     @Override
     public void deposito(Double valor) {
         if (valor > 0){
-            this.saldo += valor;
+                this.saldo += valor;
+            }
         }
-
     }
 
 
-}
+

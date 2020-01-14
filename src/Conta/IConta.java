@@ -5,5 +5,4 @@ public interface IConta {
         void transferencia(IConta destino, Double valor);
         void saque(Double valor);
         void deposito(Double valor);
-
 }

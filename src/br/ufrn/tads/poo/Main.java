@@ -1,13 +1,15 @@
 package br.ufrn.tads.poo;
 
 import Conta.ContaBancaria;
+import Conta.ContaCorrente;
+import Conta.ContaPoupanca;
 import Conta.IConta;
 
 public class Main {
     public static void main(String[] args) {
 
-        IConta conta1 = new ContaBancaria();
-        IConta conta2 = new ContaBancaria();
+        IConta conta1 = new ContaCorrente();
+        IConta conta2 = new ContaPoupanca();
 
         conta1.deposito(200.0);
         conta2.deposito(100.0);
